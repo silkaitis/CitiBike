@@ -11,7 +11,7 @@ import sqlite3 as lite
 from datetime import datetime
 from dateutil.parser import parse
 import collections
-get_ipython().magic('matplotlib inline')
+get_ipython().magic(u'matplotlib inline')
 
 
 # In[2]:
@@ -88,4 +88,17 @@ plt.bar(hourdelta.keys(),hourdelta.values())
 plt.title('Station Activity')
 plt.xlabel('Station Number')
 plt.ylabel('Number of Bikes')
+
+
+# In[5]:
+
+#Station 490 is located near several major factilities; Moynihan Station, Madison Sqaure Garden and Penn Station.
+#There were no events at Madison Square Garden or Moynihan Station on the 22nd.  There are other event spaces in the area,
+#such as a movie theater, but it's hard to imagine these smaller venues drawing enough people to generate this level
+#of activity.  Penn Station is the main railroad station for NYC and serves 600,000 commuters a day (Source: Wikipedia).
+#Data was pulled at 6 PM on a Friday which is most likely the (or near the) peak hour for commuters in a given day.  
+#There are 25,000 commuters per hour assuming the commuter volume is evenly distributed.  Therefore, only 1.1% of commuters in
+#that hour need to rent or return a bike to make this station the most active.  Realistically, commuter volume
+#won't be evenly distributed but this assumption is sufficient for now.  This simple assessment doesn't account for individuals
+#using the bike station but not commuting via Penn Station.
 
